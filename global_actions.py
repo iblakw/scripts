@@ -95,14 +95,25 @@ def waypoint_action(client, action):
         if not withdraw_item_from_stash(client, 'brown mushroom', 50, client.items['brown mushroom']): 
             print('Not enough mushrooms')
 
-        if 'health_name2' in client.hunt_config.keys():
-            health_name2, take_health2 = client.hunt_config['health_name2'], client.hunt_config['take_health2']
-            if not withdraw_item_from_stash(client, health_name2, take_health2, client.items[health_name2]): 
-                print('Not enough potions')
-        if 'ammo_name' in client.hunt_config.keys():
-            ammo_name, take_ammo = client.hunt_config['ammo_name'], client.hunt_config['take_ammo']
-            if not withdraw_item_from_stash(client, ammo_name, take_ammo, client.items[ammo_name]): 
-                print('Not enough ammo')
+    if 'health_name2' in client.hunt_config.keys():
+        health_name2, take_health2 = client.hunt_config['health_name2'], client.hunt_config['take_health2']
+        if not withdraw_item_from_stash(client, health_name2, take_health2, client.items[health_name2]): 
+            print('Not enough potions')
+            
+    if 'ammo_name' in client.hunt_config.keys():
+        ammo_name, take_ammo = client.hunt_config['ammo_name'], client.hunt_config['take_ammo']
+        if not withdraw_item_from_stash(client, ammo_name, take_ammo, client.items[ammo_name]): 
+            print('Not enough ammo')
+
+    if 'rune_name' in client.hunt_config.keys():
+        rune_name, take_rune = client.hunt_config['rune_name'], client.hunt_config['take_rune']
+        if not withdraw_item_from_stash(client, rune_name, take_rune, client.items[rune_name]): 
+            print('Not enough runes')
+
+    if 'rune_name2' in client.hunt_config.keys():
+        rune_name2, take_rune2 = client.hunt_config['rune_name2'], client.hunt_config['take_rune2']
+        if not withdraw_item_from_stash(client, rune_name2, take_rune2, client.items[rune_name2]): 
+            print('Not enough runes')
 
     elif action == "refill_gem":
         gem_name, take_gem = client.hunt_config['gem_name'], client.hunt_config['take_gem']
